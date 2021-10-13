@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/colorDeadBackground">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?android:attr/actionBarSize"
+                app:theme="@style/ToolBarStyle"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.gms.ads.AdView
+            xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-7555075543404286/1223263083">
+        </com.google.android.gms.ads.AdView>
+
+        <ImageView
+            android:layout_marginTop="20sp"
+            android:layout_width="100sp"
+            android:layout_height="100sp"
+            android:id="@+id/profileImage"
+            android:src="@mipmap/ic_user_default"
+            android:layout_marginBottom="20sp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/name"
+            android:textStyle="bold" />
+        <EditText
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:background="@color/colorWhite"
+            android:hint="@string/add_name"/>
+
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Signo "
+            android:textStyle="bold" />
+        <TextView
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signo"
+            android:background="@color/colorWhite"
+            android:hint="Adicione seu signo"
+            android:onClick="showSignos"/>
+
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ascendente "
+            android:textStyle="bold" />
+        <TextView
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ascendente"
+            android:background="@color/colorWhite"
+            android:hint="Adicione seu ascendente"
+            android:onClick="showAscendente"/>
+
+
+
+
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/idade"
+            android:textStyle="bold" />
+
+        <EditText
+
+            android:inputType="number"
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idade"
+            android:background="@color/colorWhite"
+            android:hint="@string/edit_idade"/>
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/about"
+            android:textStyle="bold" />
+        <EditText
+            android:inputType="textMultiLine"
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/about"
+            android:background="@color/colorWhite"
+            android:hint="@string/add_about"/>
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/phone"
+            android:inputType="phone"
+            android:textStyle="bold"
+            tools:ignore="TextViewEdits" />
+        <EditText
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/phone"
+            android:background="@color/colorWhite"
+
+            android:hint="@string/add_phone"/>
+
+
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/job"
+            android:textStyle="bold" />
+        <EditText
+            android:padding="10sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/job"
+            android:background="@color/colorWhite"
+            android:hint="@string/add_job"
+            android:layout_marginBottom="20sp"/>
+
+        <TextView
+            android:paddingTop="20sp"
+            android:paddingLeft="10sp"
+            android:paddingBottom="5sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/gender"
+            android:textStyle="bold" />
+
+
+        <com.addisonelliott.segmentedbutton.SegmentedButtonGroup
+            android:id="@+id/radioRealButtonGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="4dp"
+            android:elevation="2dp"
+            android:background="@color/colorPrimaryDark"
+            app:borderColor="@color/colorWhite"
+            app:borderWidth="1dp"
+            app:divider="@color/colorWhite"
+            app:dividerPadding="10dp"
+            app:dividerWidth="1dp"
+            app:position="0"
+            app:radius="30dp"
+            app:ripple="true"
+            app:rippleColor="@color/colorAccent"
+            app:selectedBackground="@color/colorAccent">
+
+            <com.addisonelliott.segmentedbutton.SegmentedButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:drawable="@drawable/ic_male"
+                app:drawableGravity="top"
+                app:selectedTextColor="@color/colorWhite"
+                app:text="@string/male"
+                app:textColor="@color/colorWhite" />
+
+            <com.addisonelliott.segmentedbutton.SegmentedButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:drawable="@drawable/ic_female"
+                app:drawableGravity="top"
+                app:selectedTextColor="@color/colorWhite"
+                app:text="@string/female"
+                app:textColor="@color/colorWhite" />
+            <com.addisonelliott.segmentedbutton.SegmentedButton
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="10dp"
+                app:drawable="@drawable/ic_nonbin"
+                app:drawableGravity="top"
+                app:selectedTextColor="@color/colorWhite"
+                app:text="Não binário"
+                app:textColor="@color/colorWhite" />
+        </com.addisonelliott.segmentedbutton.SegmentedButtonGroup>
+
+
+
+    </LinearLayout>
+</ScrollView>
+

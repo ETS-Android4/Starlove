@@ -1,0 +1,48 @@
+<resources>
+    <string translatable="false" name="app_name">Starlove</string>
+    <string translatable="false" name="title_activity_main2">Main2Activity</string>
+    <string translatable="false" name="tab_text_1">Tab 1</string>
+    <string translatable="false" name="tab_text_2">Tab 2</string>
+    <string translatable="false" name="tab_text_3">Tab 3</string>
+    <string translatable="false" name="action_settings">Configurações</string>
+    <string translatable="false" name="section_format">Hello World from section: %1$d</string>
+    <string translatable="false" name="login">Login</string>
+    <string translatable="false" name="female">Mulher</string>
+    <string translatable="false" name="male">Homem</string>
+    <string translatable="false" name="email">Email</string>
+    <string translatable="false" name="password">Senha</string>
+    <string translatable="false" name="gps_network_not_enabled">Serviços de localização não habilitados</string>
+    <string translatable="false" name="open_location_settings">Abrir serviço de localização</string>
+    <string translatable="false" name="Cancel">Cancelar</string>
+    <string translatable="false" name="messages">Mensagens</string>
+    <string translatable="false" name="new_matches">Novos Matches</string>
+    <string translatable="false" name="no_matches_to_show">Sem Matches no momento</string>
+    <string translatable="false" name="no_chats_to_show">Sem chat no momento</string>
+    <string translatable="false" name="message">Mensagem…</string>
+    <string translatable="false" name="gender">Gênero</string>
+    <string translatable="false" name="add_job">Adicionar profissão</string>
+    <string translatable="false" name="job">Profissão</string>
+    <string translatable="false" name="edit_idade">Adicionar sua idade</string>
+    <string translatable="false" name="idade">Idade</string>
+    <string translatable="false" name="add_phone">Adicionar Telefone</string>
+    <string translatable="false" name="phone">Telefone</string>
+    <string translatable="false" name="add_about">Adicionar Informações</string>
+    <string translatable="false" name="about">Conte um pouco sobre você</string>
+    <string translatable="false" name="add_name">Adicione seu nome</string>
+    <string translatable="false" name="name">Nome</string>
+    <string translatable="false" name="interested_in">Tem interesse em:</string>
+    <string translatable="false" name="search_distance">Distancia máxima (km)</string>
+    <string translatable="false" name="logout">Logout</string>
+    <string translatable="false" name="profile_image">Imagem do perfil</string>
+    <string translatable="false" name="no_more_people_to_show">Não há pessoas para mostrar…</string>
+    <string translatable="false" name="forgot_password">Esqueceu a senha?</string>
+    <string translatable="false" name="register">Cadastrar</string>
+    <string translatable="false" name="edit">Editar</string>
+    <string translatable="false" name="settings">Configurações</string>
+    <string translatable="false" name="chat_s_name">Chat\'s Name</string>
+    <string translatable="false" name="chat_message">Chat Message</string>
+    <string translatable="false" name="match_s_name">Match\'s Name</string>
+    <string translatable="false" name="text">Text</string>
+    <string translatable="false" name="tab">tab</string>
+    <string translatable="false" name="both">Both</string>
+</resources>

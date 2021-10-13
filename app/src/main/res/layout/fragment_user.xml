@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorDeadBackground">
+
+    <LinearLayout
+        android:paddingTop="40sp"
+        android:background="@drawable/user_fragment_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="40sp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="100sp"
+                android:layout_height="100sp"
+                android:background="@mipmap/ic_user_default"
+                android:id="@+id/profileImage"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:textColor="@color/colorBlack"
+                android:id="@+id/name"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="normal"
+                android:textSize="16sp"
+                android:textColor="@color/colorBlack"
+                android:id="@+id/job"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:paddingBottom="30sp"
+            android:layout_marginTop="20sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="75sp"
+                android:layout_height="75sp"
+                android:background="@drawable/ic_settings"
+                android:id="@+id/settings"
+                android:contentDescription="@string/settings" />
+            <View
+                android:layout_width="1px"
+                android:layout_height="match_parent"
+                android:background="@color/colorBlack"
+                android:layout_marginLeft="20sp"
+                android:layout_marginRight="20sp"/>
+            <ImageView
+                android:layout_width="75sp"
+                android:layout_height="75sp"
+                android:id="@+id/editProfile"
+                android:background="@drawable/ic_edit"
+                android:contentDescription="@string/edit" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="211dp"
+            android:layout_height="205dp"
+            android:layout_margin="20sp"
+            android:contentDescription="logo"
+            android:src="@mipmap/ic_starlove_logo" />
+    </LinearLayout>
+
+</LinearLayout>

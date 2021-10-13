@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/naoInfo"
+        android:title="Não informado"/>
+
+    <item android:id="@+id/leao"
+        android:title="Leão"/>
+
+    <item android:id="@+id/escorpiao"
+        android:title="Escorpião"/>
+
+    <item android:id="@+id/aries"
+        android:title="Aries"/>
+
+    <item android:id="@+id/virgem"
+        android:title="Virgem"/>
+
+    <item android:id="@+id/touro"
+        android:title="Touro"/>
+
+    <item android:id="@+id/gemeos"
+        android:title="Gêmeos"/>
+
+    <item android:id="@+id/cancer"
+        android:title="Câncer"/>
+
+    <item android:id="@+id/libra"
+        android:title="Libra"/>
+
+    <item android:id="@+id/sagitario"
+        android:title="Sagitário"/>
+
+    <item android:id="@+id/capricornio"
+        android:title="Capricórnio"/>
+
+    <item android:id="@+id/aquario"
+        android:title="Aquário"/>
+
+    <item android:id="@+id/peixes"
+        android:title="Peixes"/>
+
+
+</menu>

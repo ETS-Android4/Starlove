@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorDeadBackground"
+            android:orientation="vertical">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?android:attr/actionBarSize"
+                    app:layout_scrollFlags="scroll|enterAlways"
+                    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+                    app:theme="@style/ToolBarStyle" />
+
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <com.google.android.gms.ads.AdView
+                xmlns:ads="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_alignParentBottom="true"
+                ads:adSize="BANNER"
+                ads:adUnitId="ca-app-pub-7555075543404286/1223263083">
+            </com.google.android.gms.ads.AdView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:paddingTop="20sp"
+                android:paddingBottom="5sp"
+                android:text="@string/interested_in"
+                android:textStyle="bold" />
+
+            <CheckBox
+                android:id="@+id/prefHomem"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:text="Homem" />
+
+            <CheckBox
+                android:id="@+id/prefMulher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:text="Mulher" />
+
+            <CheckBox
+                android:id="@+id/prefNonBin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10sp"
+                android:text="Não Binário" />
+
+
+            <Switch
+                android:id="@+id/switchStarlove"
+                android:layout_marginTop="20sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sugestão Starlove de encontros" />
+
+
+            <TextView
+                android:id="@+id/textViewSigno"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:paddingTop="20sp"
+                android:paddingBottom="5sp"
+                android:text="Signo para match"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/signo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:hint="Qual signo quero encontrar?"
+                android:onClick="showSignosR"
+                android:padding="10sp" />
+
+
+            <TextView
+                android:id="@+id/textViewAsc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:paddingTop="20sp"
+                android:paddingBottom="5sp"
+                android:text="Ascendente para match"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/ascendente"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhite"
+                android:hint="Qual ascendente quero encontrar? (Opcional)"
+                android:onClick="showAscendenteR"
+                android:padding="10sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="10sp"
+                android:paddingTop="20sp"
+                android:paddingBottom="5sp"
+                android:text="@string/search_distance"
+                android:textStyle="bold" />
+
+            <com.ramotion.fluidslider.FluidSlider
+                android:id="@+id/fluidSlider"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8sp"
+                android:elevation="1dp"
+                app:bar_color="@color/colorPrimary"
+                app:duration="@android:integer/config_mediumAnimTime"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:size="small"
+                tools:targetApi="lollipop" />
+
+
+            <Button
+                android:id="@+id/logOut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:layout_marginTop="100dp"
+                android:background="@color/colorAccent"
+                android:text="@string/logout"
+                android:textColor="@android:color/white" />
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
