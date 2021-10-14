@@ -1,9 +1,12 @@
 package br.com.minimadev.starlove.Activity;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
 
@@ -12,6 +15,7 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.PopupMenu;
@@ -58,9 +62,11 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
     private DatePickerDialog.OnDateSetListener mDateSetListener;
 
     private SegmentedButtonGroup mRadioGroup;
+    private AlertDialog.Builder dialogBuilder;
+    private AlertDialog alertDialog;
 
     private ImageView mProfileImage;
-
+    private Button mSalvar;
     private FirebaseAuth mAuth;
     private DatabaseReference mUserDatabase;
     private AdView mAdView;
@@ -88,6 +94,7 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
             }
+
         });
 
 
@@ -105,11 +112,12 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
         mAbout = findViewById(R.id.about);
         mRadioGroup = findViewById(R.id.radioRealButtonGroup);
         mProfileImage = findViewById(R.id.profileImage);
+        mSalvar = findViewById(R.id.edit_save);
 
         mAuth = FirebaseAuth.getInstance();
         mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
-
         mIdade = findViewById(R.id.idade);
+
 
         /*
         mDataNasc.setOnClickListener(new View.OnClickListener() {
@@ -139,7 +147,7 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
         };
         */
 
-
+        showWelcome();
         getUserInfo();
 
         //on profile image click allow user to choose another pic by caling the responding intentt
@@ -148,7 +156,9 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
             intent.setType("image/*");
             startActivityForResult(intent, 1);
         });
+        mSalvar.setOnClickListener(view -> saveUserInformation() );
     }
+
 
 
     /**
@@ -220,6 +230,8 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
         userInfo.put("ascendente", ascendente);
 
         mUserDatabase.updateChildren(userInfo);
+        Intent intent = new Intent(EditProfileActivity.this, SettingsActivity.class);
+
 
         if(resultUri != null) {
             final StorageReference filePath = FirebaseStorage.getInstance().getReference().child("profile_images").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
@@ -227,6 +239,7 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
             UploadTask uploadTask = filePath.putFile(resultUri);
 
             uploadTask.addOnFailureListener(e -> {
+                startActivity(intent);
                 finish();
                 return;
             });
@@ -235,12 +248,15 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
                 newImage.put("profileImageUrl", uri.toString());
                 mUserDatabase.updateChildren(newImage);
 
+                startActivity(intent);
                 finish();
 
             }).addOnFailureListener(exception -> {
+                startActivity(intent);
                 finish();
             }));
         }else{
+            startActivity(intent);
             finish();
         }
     }
@@ -406,5 +422,22 @@ public class EditProfileActivity extends AppCompatActivity implements PopupMenu.
 
 
         }
+    }
+    private void showWelcome() {
+
+        dialogBuilder = new android.app.AlertDialog.Builder(this);
+        View layoutView = getLayoutInflater().inflate(R.layout.bemvindo, null);
+        Button dialogButton = layoutView.findViewById(R.id.buttonContinuar);
+        dialogBuilder.setView(layoutView);
+        alertDialog = dialogBuilder.create();
+        alertDialog.getWindow().getAttributes().windowAnimations = R.style.DialogAnimation;
+        alertDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        alertDialog.show();
+        dialogButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                alertDialog.dismiss();
+            }
+        });
     }
 }

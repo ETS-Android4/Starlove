@@ -25,6 +25,8 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.request.RequestOptions;
 import com.firebase.geofire.GeoFire;
 import com.firebase.geofire.GeoLocation;
 import com.google.android.gms.ads.AdRequest;
@@ -35,9 +37,11 @@ import com.google.android.gms.ads.initialization.InitializationStatus;
 import com.google.android.gms.ads.initialization.OnInitializationCompleteListener;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.onesignal.OneSignal;
 
 
@@ -47,6 +51,7 @@ import java.util.List;
 import br.com.minimadev.starlove.Fragments.CardFragment;
 import br.com.minimadev.starlove.Fragments.MatchesFragment;
 import br.com.minimadev.starlove.Fragments.UserFragment;
+import br.com.minimadev.starlove.Objects.UserObject;
 import br.com.minimadev.starlove.R;
 import io.nlopez.smartlocation.SmartLocation;
 import io.nlopez.smartlocation.location.providers.LocationGooglePlayServicesProvider;
@@ -74,6 +79,9 @@ public class MainActivity extends AppCompatActivity {
             R.drawable.ic_tab_card,
             R.drawable.ic_tab_chat
     };
+    private FirebaseAuth mAuth;
+    private DatabaseReference mUserDatabase;
+    UserObject mUser = new UserObject();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,7 +102,9 @@ public class MainActivity extends AppCompatActivity {
         MobileAds.initialize(this, new OnInitializationCompleteListener() {
             @Override
             public void onInitializationComplete(InitializationStatus initializationStatus) {
-                showWelcome();
+                checkProfileImg();
+
+
 
             }
         });
@@ -145,6 +155,7 @@ public class MainActivity extends AppCompatActivity {
 
         getPermissions();
         isLocationEnable();
+
     }
 
     private void showWelcome() {
@@ -163,6 +174,30 @@ public class MainActivity extends AppCompatActivity {
                     alertDialog.dismiss();
                 }
             });
+    }
+
+
+    private void checkProfileImg() {
+        mAuth = FirebaseAuth.getInstance();
+        mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+        mUserDatabase.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                mUser.parseObject(dataSnapshot);
+
+                if(mUser.getProfileImageUrl().equals("default")){
+                    Intent intent = new Intent(MainActivity.this, EditProfileActivity.class);
+                    startActivity(intent);
+                }
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
     }
 
 

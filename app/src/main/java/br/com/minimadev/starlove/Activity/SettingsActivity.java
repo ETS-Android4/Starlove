@@ -48,7 +48,7 @@ public class SettingsActivity extends AppCompatActivity implements PopupMenu.OnM
 
     private SegmentedButtonGroup mRadioGroup;
     FluidSlider mSlider;
-    private Button mLogOut;
+    private Button mLogOut, mSalvar;
     private CheckBox mCheckBoxPrefHomem, mCheckBoxPrefMulher, mCheckBoxPrefNonBin;
     private FirebaseAuth mAuth;
     private DatabaseReference mUserDatabase;
@@ -98,6 +98,7 @@ public class SettingsActivity extends AppCompatActivity implements PopupMenu.OnM
         mCheckBoxPrefHomem = findViewById(R.id.prefHomem);
         mCheckBoxPrefMulher = findViewById(R.id.prefMulher);
         mCheckBoxPrefNonBin = findViewById(R.id.prefNonBin);
+        mSalvar = findViewById(R.id.settings_save);
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -129,6 +130,7 @@ public class SettingsActivity extends AppCompatActivity implements PopupMenu.OnM
             }
         });
 
+        mSalvar.setOnClickListener(view -> saveUserInformation() );
     }
 
 
@@ -213,6 +215,7 @@ public class SettingsActivity extends AppCompatActivity implements PopupMenu.OnM
 
         userInfo.put("search_distance", Math.round(mSlider.getPosition() * 100));
         mUserDatabase.updateChildren(userInfo);
+        finish();
     }
     }
 
@@ -230,7 +233,6 @@ public class SettingsActivity extends AppCompatActivity implements PopupMenu.OnM
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         saveUserInformation();
-        finish();
         return false;
     }
 

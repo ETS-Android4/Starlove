@@ -39,6 +39,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+
     <TextView
         android:id="@+id/text1"
         android:layout_width="wrap_content"
@@ -46,23 +47,21 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="8dp"
-        android:text="Acesse o icone "
+        android:paddingLeft="15dp"
+        android:text="Adicione sua foto "
         android:textColor="#88459b"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.32"
+        app:layout_constraintHorizontal_bias="0.332"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
-
 
     <ImageView
         android:id="@+id/ic_default"
         android:layout_width="38dp"
         android:layout_height="45dp"
         android:layout_marginTop="28dp"
-        android:layout_marginLeft="25dp"
         android:src="@mipmap/ic_user_default"
         app:layout_constraintRight_toLeftOf="@id/text1"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -74,7 +73,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="8dp"
-        android:text="Atualize seu perfil"
+        android:text="Informe seu Signo"
         android:textColor="#88459b"
         android:textSize="15sp"
         android:textStyle="bold"
@@ -95,34 +94,33 @@
         app:layout_constraintRight_toLeftOf="@id/text2"
         app:layout_constraintTop_toBottomOf="@+id/text1" />
 
+
     <TextView
         android:id="@+id/text3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="8dp"
+        android:paddingLeft="15dp"
         android:text="Escolha suas preferências "
         android:textColor="#88459b"
         android:textSize="15sp"
         android:textStyle="bold"
-        android:paddingLeft="15dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text2" />
-
 
     <ImageView
         android:id="@+id/ic_settings"
         android:layout_width="37dp"
         android:layout_height="40dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="8dp"
         android:src="@drawable/ic_settings"
         app:layout_constraintRight_toLeftOf="@id/text3"
-        app:layout_constraintTop_toBottomOf="@+id/text2"
-        tools:layout_editor_absoluteX="280dp" />
-
+        app:layout_constraintTop_toBottomOf="@+id/text2" />
 
     <Button
         android:id="@+id/buttonContinuar"
