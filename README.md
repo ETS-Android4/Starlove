@@ -1,20 +1,17 @@
-# Tinder_android_app_clone
+# Starlove
 
-▷ Create an android app like tinder
+🔥 O que você quiser, o seu match perfeito está aqui: namoro, amizade, relacionamentos casuais e tudo mais! 🔥
 
-▷ Full Video Tutorial Playlist here: https://www.youtube.com/playlist?list=PLxabZQCAe5fio9dm1Vd0peIY6HLfo5MCf
+Nenhum app de relacionamento vai te conectar com o seu par astral como o Starlove consegue fazer.
 
-▷ Tools Used In this Project:
-- Android Studio;
-- Firebase:
-    *Realtime database
-    *Authentication
- - SwipeCards;
+Você sabe que tem uma identidade astral, um mapa de quem você é escrito nas estrelas e o seu match perfeito também o tem, você só precisa encontrá-lo!
 
-▷ In this project we've done:<br />
-1 - SwipeCards Implementation;<br />
+Você pode estar em busca apenas de encontros casuais, de paqueras, de amizades apenas para sair e festejar ou mesmo de um relacionamento sério, não importa, a compatibilidade astral é fundamental para que as coisas deem certo.
 
-▷ If you have any question please ask, I'll try to answer to every question and even look at your code if that is necessary.
+Pare para pensar no signo e no ascendente do seu melhor amigo(a), dos seus ex-namorados(as), será que faz sentido para você agora?
 
+Por meio do Starlove você vai conhecer as pessoas astralmente mais compatíveis com a sua identidade astral.
 
-PS: If ou're going to download the full project please use your on firebase API, the one in the project will NOT be mantained and the app may not work.
+Solteiros(as) que estão perto de você, fáceis de encontrar por geolocalização e tudo de graça.
+
+Comece a se divertir e conheça pessoas novas com melhor e mais eficiente aplicativo de relacionamentos que você já teve a experiência de usar!
