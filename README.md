@@ -1,7 +1,5 @@
 # Starlove
 
-* Aplicativo criado usando Android Studio e Java
-* Trata-se de um aplicativo de encontros, onde o 
-grande diferencial é poder selecionar o signo e o 
-ascendente da pessoa que você deseja encontrar.
-* Aplicativo encontra-se disponível para download na Play Store
+* Application created using Android Studio and Java
+* It's a dating app, where the big difference is being able to select the sign and ascendant of the person you want to meet.
+* Application is available for download on the Play Store
